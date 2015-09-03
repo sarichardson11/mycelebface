@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane ng-controller="myCelebFaceController">
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Title<button class="button ion-images library-photo" ng-click="getLibrary()"></button><button class="button ion-ios-camera-outline new-photo" ng-click="takePicture()"></button></h1>
+      </ion-header-bar>
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" show-pager="false">
+        <ion-slide>
+          <div class="box">
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" class="main-image">
+            <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" class="main-image">
+            <div class="display-text">
+              <p>Phil Mickleson</p>
+              <p>- meets -</p>
+              <p>Hugh Grant</p>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="box">
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" class="main-image">
+            <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" class="main-image">
+            <div class="display-text">
+              <p>George Clooney</p>
+              <p>- meets -</p>
+              <p>Kevin Bacon</p>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="box">
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" class="main-image">
+            <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" class="main-image">
+            <div class="display-text">
+              <p>Olivia Munn</p>
+              <p>- meets -</p>
+              <p>Sara Underwood</p>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slide-box>  
+      <script id="templates/detail.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-content>
+          <div class="list">
+            <label class="item item-input">
+              <input type="text" placeholder="First Celebrity">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Second Celebrity">
+            </label>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+    </script> 
+      <ion-footer-bar class="bar-stable">
+        <button class="button" ng-click="popover.show($event)">What do you think?</button>
+      </ion-footer-bar>
+    </ion-pane>
+  </body>
+</html>
