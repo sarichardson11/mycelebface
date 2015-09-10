@@ -30,7 +30,7 @@
       </ion-header-bar>
       <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" show-pager="false">
         <ion-slide>
-          <div class="box">
+          <div class="box" ng-click="openPopover($event)">
             <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" class="main-image">
             <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" class="main-image">
             <div class="display-text">
@@ -41,7 +41,7 @@
           </div>
         </ion-slide>
         <ion-slide>
-          <div class="box">
+          <div class="box" ng-click="openPopover($event)">
             <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" class="main-image">
             <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" class="main-image">
             <div class="display-text">
@@ -52,7 +52,7 @@
           </div>
         </ion-slide>
         <ion-slide>
-          <div class="box">
+          <div class="box" ng-click="openPopover($event)">
             <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" class="main-image">
             <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" class="main-image">
             <div class="display-text">
@@ -62,23 +62,9 @@
             </div>
           </div>
         </ion-slide>
-      </ion-slide-box>  
-      <script id="templates/detail.html" type="text/ng-template">
-      <ion-popover-view>
-        <ion-content>
-          <div class="list">
-            <label class="item item-input">
-              <input type="text" placeholder="First Celebrity">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Second Celebrity">
-            </label>
-          </div>
-        </ion-content>
-      </ion-popover-view>
-    </script> 
+      </ion-slide-box>
       <ion-footer-bar class="bar-stable">
-        <button class="button" ng-click="popover.show($event)">What do you think?</button>
+        <button class="button" ng-click="openPopover2($event)">What do you think?</button>
       </ion-footer-bar>
     </ion-pane>
   </body>

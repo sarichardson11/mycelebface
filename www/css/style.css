@@ -27,7 +27,13 @@
 	font-size: 20px;
 	padding-top: 50px;
 }
-.popover {
+.popover-detail {
 	width: 97%;
-	height: 170px;
+	height: 30%;
+	top: 60% !important;
+}
+.popover-create {
+	width: 97%;
+	height: 22%;
+	top: 50% !important;	
 }

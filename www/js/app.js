@@ -15,11 +15,15 @@ myCelebFace.value('ParseConfiguration', {
 })
 
 myCelebFace.config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('create', {
-        url: '/create',
-        templateUrl: 'create.html'
-      })
+    // $stateProvider
+    //   .state('create', {
+    //     url: '/create',
+    //     templateUrl: 'create.html'
+    //   })
+    //   .state('detail', {
+    //     url: '/detail',
+    //     templateUrl: 'detail.html'
+    //   })
 
     $urlRouterProvider.otherwise('/')
 });
@@ -99,14 +103,37 @@ myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordov
 
   };
 
-  $ionicPopover.fromTemplateUrl('templates/detail.html', {
-    scope: $scope,
-  }).then(function(popover) {
+  $scope.popover = $ionicPopover.fromTemplate('<ion-popover-view class="popover-detail"><ion-content><div class="list"><h4>Top 5 Names</h4><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p></div></ion-content></ion-popover-view>');
+
+  $scope.popover2 = $ionicPopover.fromTemplate('<ion-popover-view class="popover-create"><ion-content><div class="list"><label class="item item-input"><input type="text" placeholder="First Celebrity"></label><label class="item item-input"><input type="text" placeholder="Second Celebrity"></label><button class="button">Save</button></div></ion-content></ion-popover-view>');
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $ionicPopover.fromTemplateUrl('popover', function(popover) {
     $scope.popover = popover;
   });
+  $scope.openPopover2 = function($event) {
+    $scope.popover2.show($event);
+  };
+  $ionicPopover.fromTemplateUrl('popover2', function(popover) {
+    $scope.popover2 = popover;
+  });
 
-  $scope.openCreate = function() {
-    //console.log("hello");
-    $location.path('/create');
-  }
+  // $ionicPopover.fromTemplateUrl('templates/detail.html', {
+  //   scope: $scope,
+  // }).then(function(popover) {
+  //   $scope.popover = popover;
+  // });
+
+  // $ionicPopover.fromTemplateUrl('templates/create.html', {
+  //   scope: $scope,
+  // }).then(function(popover) {
+  //   $scope.popover = popover;
+  // });
+
+  // $scope.openCreate = function() {
+  //   //console.log("hello");
+  //   $location.path('/create');
+  // }
 });
