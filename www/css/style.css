@@ -36,3 +36,6 @@
 	left: 0 !important;
 	margin-top: 0;
 }
+.popover-wrapper {
+	padding: 20px;
+}
