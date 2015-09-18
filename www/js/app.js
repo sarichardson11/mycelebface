@@ -103,9 +103,9 @@ myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordov
 
   };
 
-  $scope.popover = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X</a><h4>Top 5 Names</h4><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p></div></ion-content></ion-popover-view>');
+  $scope.popover = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X Close</a><h4>Top 5 Names</h4><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p></div></ion-content></ion-popover-view>');
 
-  $scope.popover2 = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X</a><label class="item item-input"><input type="text" placeholder="First Celebrity"></label><label class="item item-input"><input type="text" placeholder="Second Celebrity"></label><button class="button">Save</button></div></ion-content></ion-popover-view>');
+  $scope.popover2 = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X Close</a><label class="item item-input"><input type="text" placeholder="First Celebrity"></label><label class="item item-input"><input type="text" placeholder="Second Celebrity"></label><button class="button">Save</button></div></ion-content></ion-popover-view>');
 
   $scope.openPopover = function($event) {
     $scope.popover.show($event);

@@ -26,7 +26,7 @@
 
     <ion-pane ng-controller="myCelebFaceController">
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Title<button class="button ion-images library-photo" ng-click="getLibrary()"></button><button class="button ion-ios-camera-outline new-photo" ng-click="takePicture()"></button></h1>
+        <h1 class="title"><button class="button ion-images library-photo" ng-click="getLibrary()"></button>My Celebrity Face<button class="button ion-ios-camera-outline new-photo" ng-click="takePicture()"></button></h1>
       </ion-header-bar>
       <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" show-pager="false">
         <ion-slide>
@@ -64,7 +64,8 @@
         </ion-slide>
       </ion-slide-box>
       <ion-footer-bar class="bar-stable">
-        <button class="button" ng-click="openPopover2($event)">What do you think?</button>
+        <a href="#" class="vote-link" ng-click="openPopover2($event)">What do you think?</a>
+        <!-- <button class="button" ng-click="openPopover2($event)">What do you think?</button> -->
       </ion-footer-bar>
     </ion-pane>
   </body>
