@@ -52,7 +52,7 @@ myCelebFace.run(function($ionicPlatform, $rootScope, $state) {
   });
 });
 
-myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordovaCamera, $ionicSlideBoxDelegate, $location, $ionicPopover) {
+myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordovaCamera, $ionicSlideBoxDelegate, $location, $ionicPopover, $http) {
 
   $scope.nextSlide = function() {
     $ionicSlideBoxDelegate.next();
@@ -73,6 +73,7 @@ myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordov
 
     $cordovaCamera.getPicture(options).then(function(imageData) {
       $scope.imgURI = "data:image/jpg;base64," + imageData;
+      //var photo = new Parse.File(p.id + ".jpg", { base64: vm.photo });
       // var image = document.getElementById('myImage');
       // image.src = "data:image/jpeg;base64," + imageData;
     }, function(err) {
@@ -103,9 +104,9 @@ myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordov
 
   };
 
-  $scope.popover = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X Close</a><h4>Top 5 Names</h4><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p><p>George Clooney</p></div></ion-content></ion-popover-view>');
+  $scope.popover = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X Close</a><h4>Top 5 Names</h4><p>George Clooney - 54%</p><p>George Clooney - 54%</p><p>George Clooney - 54%</p><p>George Clooney - 54%</p><p>George Clooney - 54%</p></div></ion-content></ion-popover-view>');
 
-  $scope.popover2 = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X Close</a><label class="item item-input"><input type="text" placeholder="First Celebrity"></label><label class="item item-input"><input type="text" placeholder="Second Celebrity"></label><button class="button">Save</button></div></ion-content></ion-popover-view>');
+  $scope.popover2 = $ionicPopover.fromTemplate('<ion-popover-view class="popover-custom"><ion-content><div class="list popover-wrapper"><a href="javascript:void(0)" ng-click="popover.hide()">X Close</a><label class="item item-input"><input type="text" placeholder="First Celebrity"></label><label class="item item-input"><input type="text" placeholder="Second Celebrity"></label><button class="button">Save</button><img ng-src="http://placehold.it/300x300" class="main-image"></div></ion-content></ion-popover-view>');
 
   $scope.openPopover = function($event) {
     $scope.popover.show($event);
@@ -120,6 +121,24 @@ myCelebFace.controller("myCelebFaceController", function($state, $scope, $cordov
     $scope.popover2 = popover;
   });
 
+  // $scope.createImageObject = function(data){
+  //     return $http.post('https://api.parse.com/1/classes/Listings',data,{
+  //         headers:{
+  //             'X-Parse-Application-Id': 'k2OOVCy2In1Wjo7BxNtWU7pNK5aaM7FWxDDHKWEY',
+  //             'X-Parse-REST-API-Key': 'SWD6rcZp94iYiW1cEufb8BycOPwYJo3LfkEKFdW2',
+  //             'Content-Type':'application/json'
+  //         }
+  //     });
+  // };
+  // $scope.createImage=function(data){
+  //     return $http.post('https://api.parse.com/1/files/image.jpg',data,{
+  //         headers:{
+  //             'X-Parse-Application-Id': 'k2OOVCy2In1Wjo7BxNtWU7pNK5aaM7FWxDDHKWEY',
+  //             'X-Parse-REST-API-Key': 'SWD6rcZp94iYiW1cEufb8BycOPwYJo3LfkEKFdW2',
+  //             "Content-Type": 'plain/text'
+  //         }
+  //     });
+  // };
   // $ionicPopover.fromTemplateUrl('templates/detail.html', {
   //   scope: $scope,
   // }).then(function(popover) {

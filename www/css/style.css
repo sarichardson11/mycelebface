@@ -43,16 +43,22 @@
 	left: 0 !important;
 	margin-top: 0;
 }
+.popover-custom p {
+	font-size: larger;
+}
+.popover-custom label {
+	margin: 20px 0;
+}
 .popover-wrapper {
 	padding: 20px;
 }
 
 /* Overwrites */
 .bar-stable .button.new-photo, .bar-stable .button.library-photo {
-	background-color: yellow;
+	background-color: #eee;
 }
 .bar.bar-stable  {
-	background-color: yellow;
+	background-color: #eee;
 }
 .platform-ios .popover {
 	border-radius: 0;
